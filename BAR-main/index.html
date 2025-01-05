@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <title>Menu</title>
+</head>
+<body>
+    <div>
+        <img class="Logo" src="./img/Logo.png" alt="Logo">
+    </div>
+    <section>
+        <div id="container">
+            <h1 id="title-Initial">Clientes</h1>
+            <input type="text" id="searchMesaInput" placeholder="Pesquisar mesa..." />
+            <button id="addButton" style="padding: 10px 30px; font-size: 14px;">Adicionar Clientes</button>
+            <input type="text" id="itemName" placeholder="Digite o nome da mesa" style="display: none;">
+            <button id="confirmButton" style="display: none; padding: 10px 30px; font-size: 14px; margin: auto; margin-bottom: 15px; border-radius: 5px;">Confirmar</button>
+            <div id="items"></div>
+        </div>
+
+        <div id="mesaPage" style="display:none;">
+
+            <div id="Confirm-Concluir">
+                <h2 style="margin-bottom: 40px; margin-top: 10px; border: none;">Deseja concluir a mesa?</h2>
+                <button id="btn-Confirm-Concluir" onclick="ConcluirMesa()">Sim</button>
+                <button id="btn-No-Concluir" onclick="CloseConfirmMesa()">Não</button>
+            </div>
+
+            <h2 id="mesaTitle"></h2>
+            <button id="addMesaItemButton" class="btn btn-2 btn-sep icon-cart">Adicionar Item</button>
+            <div id="mesaItems"></div>
+            <div id="totalValue" class="total-value">Total: R$ 0.00</div>
+            <div class="finishBack">
+                <button id="deleteMesaButton" style="background-color: #27ae60;"> Concluir</button>
+                <button id="backButton">Voltar</button>
+            </div>
+
+            <div>
+                <button onclick="exportarParaTexto()" class="btn-imprimir">Exportar para Texto</button>
+                <button onclick="exportarParaPDF()" class="btn-imprimir">Exportar para PDF</button>
+                <button onclick="imprimirComprovante()" class="btn-imprimir">Imprimir Comprovante</button>
+            </div>
+        </div>
+        <div id="modal" style="display: none;">
+            <div id="modalContent">
+                <input type="text" id="searchInput" onkeyup="searchItems()" placeholder="Pesquisar item...">
+                <span class="close">&times;</span>
+                <h3 style="margin-top: 10px; margin-bottom: 10px;">Escolha um item:</h3>
+                <button style="padding: 5px; border-radius: 3px;">Bebidas</button>
+                <button style="padding: 5px; border-radius: 3px;">Comidas</button>
+                <button style="padding: 5px; border-radius: 3px;">Espetos</button>
+                <button style="padding: 5px; border-radius: 3px;">Cachaças</button>
+                <div id="itemOptions"></div>
+
+                <!-- Oculto -->
+                <button id="confirmItemButton" style="display: none;">Adicionar Item</button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./products/itens.js"></script>
+<script src="./script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</html>
