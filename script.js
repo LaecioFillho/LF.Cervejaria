@@ -336,9 +336,7 @@ closeModal.addEventListener("click", function () {
 
 // Botão de deletar mesa
 deleteMesaButton.addEventListener("click", function () {
-
   ConfirmConcluir.style.display = 'block'
-
 });
 
 function ConcluirMesa() {

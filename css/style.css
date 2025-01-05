@@ -18,9 +18,9 @@ body {
 }
 
 .Logo{
-  margin: 15px;
-  width: 200px;
-  height: 200px;
+  margin: 10px;
+  width: 190px;
+  height: 120px;
 }
 
 section{
@@ -340,6 +340,19 @@ h2 {
   cursor: pointer;
   margin: auto;
   margin-bottom: 15px;
+}
+
+.btn-filter{
+  border: none;
+  background-color: #27ae60;
+  color: white;
+  font-size: 16px;
+}
+
+.btn-filter:hover{
+  background-color: #25f07a;
+  color: rgb(59, 52, 52);
+  transition: 0.2s;
 }
 
 #Confirm-Concluir {
