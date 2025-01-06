@@ -496,7 +496,7 @@ function exportarParaPDF() {
 function imprimirComprovante() {
   // Cria um conteúdo HTML temporário para impressão
   let printContent = `
-    <div style="text-align: center; margin: 0px; padding: 0px; font-size: 17px;">
+    <div style="text-align: center; margin: 0px; padding: 0px; font-size: 24px;">
       <h4 style="margin: 0px; padding: 0px;">
         Cliente - ${document.getElementById('mesaTitle').innerText}
       </h4>
