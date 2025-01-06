@@ -496,17 +496,17 @@ function exportarParaPDF() {
 function imprimirComprovante() {
   // Cria um conteúdo HTML temporário para impressão
   let printContent = `
-    <div style="text-align: center; margin: 0px; padding: 0px; font-size: 52px;">
+    <div style="text-align: center; margin: 0px; padding: 0px; font-size: 48px;">
       <h4 style="margin: 0px; padding: 0px;">
         Cliente - ${document.getElementById('mesaTitle').innerText}
       </h4>
-      <p style="margin: 0px; padding: 0px; font-size: 17px;">
+      <p style="margin: 0px; padding: 0px; font-size: 15px;">
         --------------------------------------------------------------------------------------------------------------------------------------
       </p>
       <h4 style="margin: 0px; padding: 0px;">
         Produtos
       </h4>
-      <p style="margin: 0px; margin-bottom: 3px; padding: 0px; font-size: 17px;">
+      <p style="margin: 0px; margin-bottom: 3px; padding: 0px; font-size: 15px;">
         --------------------------------------------------------------------------------------------------------------------------------------
       </p>
   `;
@@ -527,13 +527,13 @@ function imprimirComprovante() {
   // Adiciona o total da mesa
   const totalValue = document.getElementById("totalValue").innerText;
   printContent += `
-      <p style="margin: 0px; margin-bottom: 3px; padding: 0px; font-size: 17px;">
+      <p style="margin: 0px; margin-bottom: 3px; padding: 0px; font-size: 15px;">
         --------------------------------------------------------------------------------------------------------------------------------------
       </p>
       <h4 style="margin: 0px; padding: 0px;">
         ${totalValue}
       </h4>
-      <p style="margin: 0px; padding: 0px; font-size: 17px;">
+      <p style="margin: 0px; padding: 0px; font-size: 15px;">
         --------------------------------------------------------------------------------------------------------------------------------------
       </p>
     </div>
