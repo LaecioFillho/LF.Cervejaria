@@ -446,24 +446,26 @@ function exportarParaTexto() {
 function exportarParaPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
+  doc.setFontSize(42);
 
-  let y = 10; // Posição inicial para o texto no PDF
+  let y = 30; // Posição inicial para o texto no PDF
 
   // Obtém o nome da mesa
   const mesaTitle = document.getElementById("mesaTitle").innerText;
 
   // Adiciona o nome do cliente (nome da mesa)
-  doc.text(`Cliente - ${mesaTitle}`, 10, y);
+  doc.text(`Cliente - ${mesaTitle}`, 55, y);
   y += 5; // Pula linha
 
-  doc.text("______________", 10, y);
-  y += 10;
+  doc.text("________________", 45, y);
+  y += 20;
 
   // Adiciona "Produtos"
-  doc.text("Produtos", 10, y);
-  y += 2; // Pula linha
-  doc.text("______________", 10, y);
-  y += 3;
+  doc.text("Produtos", 70, y);
+  y += 5; // Pula linha
+
+  doc.text("________________", 45, y);
+  y += 5;
 
   // Obtém os itens
   const items = document.querySelectorAll("#mesaItems > div");
@@ -472,18 +474,18 @@ function exportarParaPDF() {
       const itemText = item.querySelector("span").innerText;
 
       // Adiciona o item ao PDF
-      doc.text(`\n${itemText}`, 10, y,);
-      y += 15; // Pula linha entre os itens
+      doc.text(`\n${itemText}`, 55, y,);
+      y += 37; // Pula linha entre os itens
   });
 
   // Adiciona o total
   const totalValue = document.getElementById("totalValue").innerText;
-  doc.text("______________", 10, y);
-  y += 10;
-  doc.text(`${totalValue}`, 10, y);
+  doc.text("________________", 45, y);
+  y += 20;
+  doc.text(`${totalValue}`, 55, y);
   y += 5; // Pula linha antes de salvar
-  doc.text("______________", 10, y);
-  y += 10;
+  doc.text("________________", 45, y);
+  y += 5;
 
   // Salva o PDF
   const comprovante = `${mesaTitle}.pdf`;
@@ -494,10 +496,19 @@ function exportarParaPDF() {
 function imprimirComprovante() {
   // Cria um conteúdo HTML temporário para impressão
   let printContent = `
-    <div style="text-align: center;">
-      <h2>Cliente</h2>
-      <p>${document.getElementById('mesaTitle').innerText}</p>
-      <h3>Produtos</h3>
+    <div style="text-align: center; margin: 0px; padding: 0px; font-size: 17px;">
+      <h4 style="margin: 0px; padding: 0px;">
+        Cliente - ${document.getElementById('mesaTitle').innerText}
+      </h4>
+      <p style="margin: 0px; padding: 0px; font-size: 5px;">
+        --------------------------------------------------------------------------------------------------------------------------------------
+      </p>
+      <h4 style="margin: 0px; padding: 0px;">
+        Produtos
+      </h4>
+      <p style="margin: 0px; margin-bottom: 3px; padding: 0px; font-size: 5px;">
+        --------------------------------------------------------------------------------------------------------------------------------------
+      </p>
   `;
 
   // Adiciona os produtos da mesa
@@ -507,14 +518,24 @@ function imprimirComprovante() {
       const itemParts = itemText.split("\n");
 
       // Exibe o nome do produto em uma linha e a quantidade e preço na próxima linha
-      printContent += `<p>${itemParts[0]}</p>`;  // Nome do item
-      printContent += `<p>${itemParts[1]}</p>`;  // Quantidade e preço
+      printContent += `
+      <p style="margin: 0px; margin-bottom: 3px; padding: 0px">
+        ${itemParts[0]} - ${itemParts[1]}
+      </p>`;
   });
 
   // Adiciona o total da mesa
   const totalValue = document.getElementById("totalValue").innerText;
   printContent += `
-      <h3>${totalValue}</h3>
+      <p style="margin: 0px; margin-bottom: 3px; padding: 0px; font-size: 5px;">
+        --------------------------------------------------------------------------------------------------------------------------------------
+      </p>
+      <h4 style="margin: 0px; padding: 0px;">
+        ${totalValue}
+      </h4>
+      <p style="margin: 0px; padding: 0px; font-size: 5px;">
+        --------------------------------------------------------------------------------------------------------------------------------------
+      </p>
     </div>
   `;
 
