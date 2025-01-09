@@ -496,7 +496,7 @@ function exportarParaPDF() {
 function imprimirComprovante() {
   // Cria um conteúdo HTML temporário para impressão
   let printContent = `
-    <div style="text-align: center; margin: 0px; padding: 0px; font-size: 48px;">
+    <div style="text-align: center; margin: 0px; padding: 0px; font-size: 48px; display: flex; flex-direction: column; align-items: center;">
       <h4 style="margin: 0px; padding: 0px;">
         Cliente - ${document.getElementById('mesaTitle').innerText}
       </h4>
@@ -519,9 +519,14 @@ function imprimirComprovante() {
 
       // Exibe o nome do produto em uma linha e a quantidade e preço na próxima linha
       printContent += `
-      <p style="margin: 0px; margin-bottom: 3px; padding: 0px">
-        ${itemParts[0]} - ${itemParts[1]}
-      </p>`;
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 710px;>
+        <p style="margin: 0px; margin-bottom: 3px; padding: 0px;">
+          ${itemParts[0]}
+        </p>
+        <p style="margin: 0px; margin-bottom: 3px; padding: 0px;">
+          - ${itemParts[1]}
+        </p>
+      </div>`;
   });
 
   // Adiciona o total da mesa

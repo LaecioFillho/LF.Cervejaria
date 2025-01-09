@@ -1,5 +1,5 @@
 const itens = [
-  
+
   //Cervejas
   { nome: "Skol Litrinho...", preco: 4.00 },
   { nome: "Petra Lata 350ml", preco: 4.00 },
@@ -18,8 +18,8 @@ const itens = [
   { nome: "Skol Litrão 1L..", preco: 10.00},
   { nome: "Spaten 600ml....", preco: 10.00},
   { nome: "Budweiser Litrão", preco: 10.00},
-  
-  
+
+
   //Energeticos
   { nome: "Baly Lata.......", preco: 10.00},
   { nome: "RedBull Lata....", preco: 11.00},
@@ -27,9 +27,10 @@ const itens = [
   //Aguas
   { nome: "Agua Mineral....", preco: 2.00},
   { nome: "Agua C/Gas......", preco: 3.00},
-  
+
   //Refrigerantes
   { nome: "Coca-Cola ks....", preco: 6.00},
+  { nome: "Coca-Cola Lata..", preco: 5.00},
   { nome: "Coca Cola 600ml.", preco: 7.00},
   { nome: "Cajuina 600ml...", preco: 6.00},
   { nome: "Cajuina 1L......", preco: 8.00},
@@ -78,7 +79,7 @@ const itens = [
   //Ices e Vinhos
   { nome: "Ice Cabare......", preco: 9.00},
   { nome: "Vinho...........", preco: 9.00},
-  
+
   //Comidas
   { nome: "Feijoada Comp...", preco: 30.00},
   { nome: "Meia Feijoada...", preco: 15.00},
@@ -98,7 +99,7 @@ const itens = [
   { nome: "Esp. Linguica...", preco: 4.00},
   { nome: "Esp. Coracao....", preco: 5.00},
   { nome: "Esp. Boi........", preco: 5.00},
-  { nome: "Esp. FranBacon..", preco: 5.00},
+  { nome: "Esp. FranBacon..", preco: 6.00},
   { nome: "Esp. Carneiro...", preco: 6.00},
   { nome: "Esp. Picanha....", preco: 7.00},
   // Adicione mais itens conforme necessário
